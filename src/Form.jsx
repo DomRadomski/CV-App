@@ -37,6 +37,15 @@ export default function Form({data, setData, setSubmitted}) {
                         value={data.phone}
                         onChange={handleChange}
                     />
+
+                    <FormElement
+                        name="about"
+                        label="About You"
+                        type="text"
+                        value={data.about}
+                        onChange={handleChange}
+                        textArea={true}
+                    />
                 </div>
 
             </section>
@@ -103,6 +112,14 @@ export default function Form({data, setData, setSubmitted}) {
                         value={data.posTo}
                         onChange={handleChange}
                     />
+                    <FormElement
+                        name="responsibility"
+                        label="Responsibilities"
+                        type="textarea"
+                        value={data.responsibility}
+                        onChange={handleChange}
+                        textArea={true}
+                    />
                 </div>
                 <button onClick={handleClick}>Submit</button>
             </section>                           
@@ -110,19 +127,37 @@ export default function Form({data, setData, setSubmitted}) {
     )
 }
 
-function FormElement({ name, label, type = "text", required = false, value, onChange}) {
-  
-    return (
-    <div>
-      <label htmlFor={name}>{label}</label><br />
-      <input
-        type={type}
-        id={name}
-        name={name}
-        required={required}
-        onChange={onChange}
-        value={value}
-      />
-    </div>
-  );
+function FormElement({
+        name,
+        label,
+        type = "text",
+        required = false,
+        value,
+        onChange,
+        textArea = false
+    }) {
+        return (
+            <div>
+                <label htmlFor={name}>{label}</label><br />
+
+                {textArea ? (
+                <textarea
+                    id={name}
+                    name={name}
+                    required={required}
+                    value={value}
+                    onChange={onChange}
+                />
+                ) : (
+                <input
+                    type={type}
+                    id={name}
+                    name={name}
+                    required={required}
+                    value={value}
+                    onChange={onChange}
+                />
+                )}
+            </div>
+        );
 }

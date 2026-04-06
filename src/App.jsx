@@ -15,7 +15,9 @@ function App() {
     company: '',
     position: '',
     posFrom: '',
-    posTo: ''
+    posTo: '',
+    responsibility: '',
+    about: ''
   })
 
   return (
