@@ -1,7 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 import Form from './Form'
 import CV from './CV'
@@ -11,7 +8,14 @@ function App() {
   const [cvData, setCVData] = useState({
     name: '',
     email: '',
-    phone: ''
+    phone: '',
+    uni: '',
+    uniCourse: '',
+    uniDate: '',
+    company: '',
+    position: '',
+    posFrom: '',
+    posTo: ''
   })
 
   return (
