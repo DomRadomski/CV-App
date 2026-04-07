@@ -12,12 +12,11 @@ function App() {
     uni: '',
     uniCourse: '',
     uniDate: '',
-    company: '',
-    position: '',
-    posFrom: '',
-    posTo: '',
-    responsibility: '',
-    about: ''
+    about: '',
+    company: '', 
+    position: '', posFrom: '', 
+    posTo: '', 
+    responsibility:''
   })
 
   return (
